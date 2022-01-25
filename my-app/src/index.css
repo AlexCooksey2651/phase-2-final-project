@@ -5,9 +5,76 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://wallpaperaccess.com/full/115070.jpg");
+  background-size: cover;
 }
 
-code {
+.header {
+  text-align: center;
+  color: azure;
+  background-color: darkblue
+}
+
+.sharkCard {
+  text-align: center;
+  border: solid black 1px;
+  width: 70%;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: mediumaquamarine;
+}
+
+.formContainer {
+  margin: 50px auto;
+  background-color: mediumaquamarine;
+  text-align: center;
+  width: 50%;
+}
+
+input[type=text], input[type=number] {
+  width: 50%;
+  text-align: center;
+  padding: 30px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type=submit] {
+  width: 20%;
+  background-color: lightslategrey;
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.learnAndHelp {
+  margin: 50px auto;
+  background-color: mediumaquamarine;
+  text-align: left;
+  width: 80%;
+  padding: 5px 10px;
+  align-content: center;
+}
+
+#sharkVideo {
+  margin: auto;
+}
+
+.learnAndHelp h2 {
+  text-align: center;
+}
+
+ul {
+  line-height: 20px;
+}
+
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
