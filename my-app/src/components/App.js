@@ -5,7 +5,6 @@ import NavBar from "./NavBar";
 import SharkContainer from "./SharkContainer";
 import SharkForm from "./SharkForm";
 import LearnAndHelp from "./LearnAndHelp"
-import Search from "./Search"
 
 
 
@@ -44,7 +43,6 @@ function App() {
         <div className = "App" >
             <Header />
             <NavBar />
-            <Search handleSearch={handleSearch}/>
             <Switch >
               <Route exact path="/learnandhelp">
                 <LearnAndHelp />
@@ -53,10 +51,9 @@ function App() {
                 <SharkForm addShark={handleAddShark}/>
               </Route>
               <Route exact path="/">
-                <SharkContainer sharks={filteredSharks} changeDonationAmount={handleUpdateSharks}/>
+                <SharkContainer sharks={filteredSharks} changeDonationAmount={handleUpdateSharks} handleSearch={handleSearch}/>
               </Route>
             </Switch>
-            
         </div>
     )
 }

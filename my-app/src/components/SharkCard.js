@@ -49,7 +49,7 @@ function SharkCard({ shark, changeDonationAmount }) {
                 <h4>Conservation Status: {conservation_status}</h4>
                 <h5>Fun Fact: <br /> {fun_fact}</h5>
                 <a href={learn_more}>Learn More</a>
-                <h4>Current Donations: {current_donated}</h4>
+                <h4>Current Donations: ${current_donated}</h4>
             </div>
             <form className="donation" onSubmit={handleUpdateDonation}>
                 <button type="submit">Donate to support the {name}</button>

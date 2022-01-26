@@ -33,7 +33,7 @@ function NavBar() {
           background: "darkblue",
         }}
       >
-        Add Shark Form
+        Add a Shark
       </NavLink>
       <NavLink
         to="/learnandhelp"
@@ -43,7 +43,7 @@ function NavBar() {
           background: "darkblue",
         }}
       >
-        Learn And Help
+        Learn and Help
       </NavLink>
     </div>
   );
