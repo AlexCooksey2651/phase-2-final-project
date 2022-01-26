@@ -1,5 +1,5 @@
 # Welcome to SharkAid!
-### Alex Cooksey Phase 2 - Final Project
+#### Alex Cooksey Phase 2 - Final Project
 
 ## Functional Description:
 
@@ -38,9 +38,52 @@ function App() {
 }
 ```
 
+Ultimately, it is this `filteredSharks` variable that is passed down to the SharkContainer component and the SharkCard component, rather than the `sharks` variable (stored in state). 
+
 The SharkCards mostly display information, but also contain a small form that allows users to donate an amount of their choosing. When submitted, this triggers a patch request to update the current_donated variable for the appropriate shark on the backend. The display is then updated within the App component, using an `if else` statement so that only the appropriate shark is updated in state. 
 
-As mentioned earlier, "Add a Shark" contains a form. When the submit button is clicked, a POST request is triggered to the backend so that the shark, when added, persists if the page is reloaded. In the App component, we update state to include the new shark in our display as follows:
+As mentioned earlier, "Add a Shark" contains a form. The form is a controlled component, with all the `formData` stored in state. State is modified with `setFormData()` whenever an input field is changed, using the `handleChange()` function. When the submit button is clicked, a POST request is triggered to the backend so that the shark, when added, persists if the page is reloaded. 
+
+```
+function SharkForm({ addShark }) {
+    const [formData, setFormData] = useState(
+        {
+            "name": "More Information Needed",
+            "image": "More Information Needed",
+            "scientific_name": "More Information Needed",
+            "length": "More Information Needed",
+            "weight": "More Information Needed",
+            "conservation_status": "More Information Needed",
+            "fun_fact": "More Information Needed",
+            "learn_more": "More Information Needed",
+            "current_donated": 0,
+        }
+    )
+
+    function handleChange(event) {
+        const name = event.target.name
+        const value = event.target.value
+        setFormData({
+            ...formData,
+            [name]: value,
+        })
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault()
+        fetch('http://localhost:3000/sharks', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => response.json())
+            .then(newShark => addShark(newShark))
+    }
+```
+
+In the App component, we update state to include the new shark in our display of cards as follows:
 
 ```setSharks([...sharks, newShark])```
 
