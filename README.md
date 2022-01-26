@@ -93,6 +93,8 @@ Some options for future updates: I could look to update the app to reset forms a
 
 ## Resources:
 
+For backend db.json file, please visit [sharkaid-json-server](https://github.com/AlexCooksey2651/sharkaid-json-server/tree/main/db) on Github.
+
 This application was built with HTML, CSS, and JavaScript/React.
 
 [Blog Post](https://medium.com/@aecooksey2651/react-app-from-scratch-sharkaid-6c8ec3b42fc3) on Medium.
