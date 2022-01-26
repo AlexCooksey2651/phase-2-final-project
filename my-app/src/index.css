@@ -15,6 +15,14 @@ body {
   background-color: darkblue
 }
 
+h1 {
+  font-size: 3em;
+}
+
+#navBar {
+  text-align: center;
+}
+
 .sharkCard {
   text-align: center;
   border: solid black 1px;
@@ -43,7 +51,7 @@ input[type=text], input[type=number] {
 }
 
 button[type=submit] {
-  width: 20%;
+  width: 35%;
   background-color: lightslategrey;
   color: white;
   padding: 10px;
@@ -62,8 +70,8 @@ button[type=submit] {
   align-content: center;
 }
 
-#sharkVideo {
-  margin: auto;
+#video {
+  text-align: center;
 }
 
 .learnAndHelp h2 {
@@ -72,6 +80,34 @@ button[type=submit] {
 
 ul {
   line-height: 20px;
+}
+
+.donation input[type=number] {
+  width: 25%;
+  height: 5px;
+  text-align: center;
+  padding: 18px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#sharkSearch input[type="text"] {
+  width: 30%;
+  align-items: center;
+  padding: 10px 20px;
+  margin: auto;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box
+}
+
+#sharkSearch {
+  text-align: center;
+  padding: 20px;
 }
 
 /* code {

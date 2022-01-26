@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function SharkForm() {
+function SharkForm({ addShark }) {
     const [formData, setFormData] = useState(
         {
             "name": "More Information Needed",
@@ -14,29 +14,52 @@ function SharkForm() {
             "current_donated": 0,
         }
     )
+
+    function handleChange(event) {
+        const name = event.target.name
+        const value = event.target.value
+        setFormData({
+            ...formData,
+            [name]: value,
+        })
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault()
+        fetch('http://localhost:3000/sharks', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => response.json())
+            .then(newShark => addShark(newShark))
+    }
+
     return (
         <div className="formContainer">
-            <form className="sharkForm">
+            <form className="sharkForm" onSubmit={handleSubmit}>
             <br />
             <label>
                 Name:
                 <br />
-                <input
+                <input required
                 type="text"
                 name="name"
                 placeholder="Shark Name"
-                onChange={(e) => console.log(e.target.value)}
+                onChange={handleChange}
                 />
             </label>
             <br />
             <label>
                 Image:
                 <br />
-                <input
+                <input required
                 type="text"
                 name="image"
                 placeholder="Image URL"
-                onChange={(e) => console.log(e.target.value)}
+                onChange={handleChange}
                 />
             </label>
             <br />
@@ -47,7 +70,7 @@ function SharkForm() {
                 type="text"
                 name="scientific_name"
                 placeholder="Scientific Name"
-                onChange={(e) => console.log(e.target.value)}
+                onChange={handleChange}
                 />
             </label>
             <br />
@@ -58,7 +81,7 @@ function SharkForm() {
                 type="text"
                 name="length"
                 placeholder="Average Length"
-                onChange={(e) => console.log(e.target.value)}
+                onChange={handleChange}
                 />
             </label>
             <br />
@@ -69,7 +92,7 @@ function SharkForm() {
                 type="text"
                 name="weight"
                 placeholder="Average Weight"
-                onChange={(e) => console.log(e.target.value)}
+                onChange={handleChange}
                 />
             </label>
             <br />
@@ -80,7 +103,7 @@ function SharkForm() {
                 type="text"
                 name="conservation_status"
                 placeholder="Conservation Status"
-                onChange={(e) => console.log(e.target.value)}
+                onChange={handleChange}
                 />
             </label>
             <br />
@@ -91,25 +114,24 @@ function SharkForm() {
                 type="text"
                 name="fun_fact"
                 placeholder="Fun Fact"
-                onChange={(e) => console.log(e.target.value)}
+                onChange={handleChange}
                 />
             </label>
             <br />
             <label>
                 Current Amount Donated:
                 <br />
-                <input
+                <input required
                 type="number"
                 name="current_donated"
                 placeholder="$0"
-                onChange={(e) => console.log(e.target.value)}
+                onChange={handleChange}
                 />
             </label>
             <br />
             <br />
             <br />
-            <br />
-            <button type="submit">Add Shark</button>
+            <button type="submit" >Add Shark</button>
             </form>
         </div>
       );

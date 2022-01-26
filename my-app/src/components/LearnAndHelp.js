@@ -3,7 +3,10 @@ import React from "react";
 function LearnAndHelp() {
     return (
         <div className="learnAndHelp">
-            <iframe id="sharkVideo" width="560" height="315" src="https://www.youtube.com/embed/FYonjn1oYcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div id="video">
+                <iframe id="sharkVideo" width="560" height="315" src="https://www.youtube.com/embed/FYonjn1oYcQ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
+                </iframe>
+            </div>
             <p>Be honest - when you think of sharks, do you think of intelligent, curious animals like the tiger shark in this video? Or do you think of ferocious, malevolent, man-eaters like the one in <em>Jaws</em> or countless other horror movies?</p>
             <p>For what it's worth, Peter Benchley - the author of <em>Jaws</em> (the book upon which the famous film is based) - came to regret how he portrayed these maligned creatures and became an activist for ocean protection. While sharks are indeed large predators, capable of aggression and violence, they are far more deserving of our respect and appreciation than our fear and revulsion. Now more than ever, they need our protection.</p>
             <p>Consider this: as of 2021, an average of 10 people are killed each year by shark attacks, and many attacks occur when humans provoke sharks through contact (such as touching a wild shark or hooking/netting one while fishing). By contrast, the Australian Institute of Marine Science reports that an estimated 150 people are killed each year by falling coconuts.</p>
