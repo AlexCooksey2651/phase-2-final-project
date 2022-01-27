@@ -1,19 +1,19 @@
 import React, { useState } from "react";
+const initialState = {
+    name: "",
+    image: "",
+    scientific_name: "",
+    length: "",
+    weight: "",
+    conservation_status: "",
+    fun_fact: "",
+    learn_more: "",
+    current_donated: 0,
+}   
 
 function SharkForm({ addShark }) {
-    const [formData, setFormData] = useState(
-        {
-            "name": "More Information Needed",
-            "image": "More Information Needed",
-            "scientific_name": "More Information Needed",
-            "length": "More Information Needed",
-            "weight": "More Information Needed",
-            "conservation_status": "More Information Needed",
-            "fun_fact": "More Information Needed",
-            "learn_more": "More Information Needed",
-            "current_donated": 0,
-        }
-    )
+    
+    const [formData, setFormData] = useState(initialState)
 
     function handleChange(event) {
         const name = event.target.name
@@ -48,6 +48,7 @@ function SharkForm({ addShark }) {
                 type="text"
                 name="name"
                 placeholder="Shark Name"
+                value={formData.name}
                 onChange={handleChange}
                 />
             </label>
@@ -59,6 +60,7 @@ function SharkForm({ addShark }) {
                 type="text"
                 name="image"
                 placeholder="Image URL"
+                value={formData.image}
                 onChange={handleChange}
                 />
             </label>
@@ -70,6 +72,7 @@ function SharkForm({ addShark }) {
                 type="text"
                 name="scientific_name"
                 placeholder="Scientific Name"
+                value={formData.scientific_name}
                 onChange={handleChange}
                 />
             </label>
@@ -81,6 +84,7 @@ function SharkForm({ addShark }) {
                 type="text"
                 name="length"
                 placeholder="Average Length"
+                value={formData.length}
                 onChange={handleChange}
                 />
             </label>
@@ -92,6 +96,7 @@ function SharkForm({ addShark }) {
                 type="text"
                 name="weight"
                 placeholder="Average Weight"
+                value={formData.weight}
                 onChange={handleChange}
                 />
             </label>
@@ -103,6 +108,7 @@ function SharkForm({ addShark }) {
                 type="text"
                 name="conservation_status"
                 placeholder="Conservation Status"
+                value={formData.conservation_status}
                 onChange={handleChange}
                 />
             </label>
@@ -114,6 +120,19 @@ function SharkForm({ addShark }) {
                 type="text"
                 name="fun_fact"
                 placeholder="Fun Fact"
+                value={formData.fun_fact}
+                onChange={handleChange}
+                />
+            </label>
+            <br />
+            <label>
+                Learn More:
+                <br />
+                <input
+                type="text"
+                name="learn_more"
+                placeholder="Learn More URL"
+                value={formData.learn_more}
                 onChange={handleChange}
                 />
             </label>
@@ -125,6 +144,7 @@ function SharkForm({ addShark }) {
                 type="number"
                 name="current_donated"
                 placeholder="$0"
+                value={formData.current_donated}
                 onChange={handleChange}
                 />
             </label>
