@@ -1,6 +1,9 @@
 # Welcome to SharkAid!
 #### Alex Cooksey Phase 2 - Final Project
 
+NOTE: Please access the `db.json` file [here](https://github.com/AlexCooksey2651/sharkaid-json-server).
+In order for the fetch requests to work properly in this project, the backend should be loaded at [http://localhost:3000/sharks](http://localhost:3000/sharks).
+
 ## Functional Description:
 
 SharkAid is a web app designed to help users learn more about sharks and steps they can take to support the protection of sharks and, more generally, ocean conservation. 
@@ -93,7 +96,7 @@ Some options for future updates: I could look to update the app to reset forms a
 
 ## Resources:
 
-For backend db.json file, please visit [sharkaid-json-server](https://github.com/AlexCooksey2651/sharkaid-json-server/tree/main/db) on Github.
+For backend `db.json` file, please visit [sharkaid-json-server](https://github.com/AlexCooksey2651/sharkaid-json-server/tree/main/db) on Github.
 
 This application was built with HTML, CSS, and JavaScript/React.
 
